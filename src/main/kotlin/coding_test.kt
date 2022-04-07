@@ -8,7 +8,19 @@ fun main(args: Array<String>){
     printSum(1,2)
     printSum2(2,3)
     var rectangle = Rectangle(5.0,2.0)
-    print("the rectangle is ${rectangle.perimeter}")
+    println("the rectangle is ${rectangle.perimeter}")
+
+    // String templates
+
+    var a =1
+    var s1 = "a is $a"
+
+    println(s1)
+    a =2
+    val s2 = "${s1.replace("is","was")}, but now is $a"
+    println(s2)
+
+    println(maxOf(1,2))
 
 }
 
@@ -24,3 +36,6 @@ fun printSum(a: Int, b: Int): Unit{
 fun printSum2(a: Int, b: Int){
     println("sum of $a and $b is ${a+b}")
 }
+
+fun maxOf(a: Int, b: Int) = if(a>b) a else b
+
