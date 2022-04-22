@@ -4,7 +4,8 @@ class Triangle(
     val a:Double,
     val b:Double,
     val c:Double
-): Shape("Triangle") {
+): Shape("Triangle", a, b, c, d, height) {
+    constructor(a:Double): this(a,a,a)
 
     init {
         println("$name created with a = $a, b = $b, c = $c")
@@ -12,9 +13,9 @@ class Triangle(
         println("$name perimeter is ${perimeter()}")
     }
 
-    fun area() = sqrt((perimeter() / 2) * (perimeter() /2 -a) * (perimeter() / 2 - b) * (perimeter()/2 -c))
+    override fun area() = sqrt((perimeter() / 2) * (perimeter() /2 -a) * (perimeter() / 2 - b) * (perimeter()/2 -c))
 
-    fun perimeter() = a + b + c
+    override fun perimeter() = a + b + c
 
 
 

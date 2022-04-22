@@ -1,4 +1,3 @@
-
 fun main(args: Array<String>){
 //    println("hello world")
 //    println(args.contentToString())
@@ -14,11 +13,11 @@ fun main(args: Array<String>){
 //    val hardExpression = !(x != z) && boo1 ||z>(x+y) && (!boo1 || y<z)
 //    println(hardExpression)
 
-    val x =10
-    val y = 7
-    if(x<y) println("$x is lesser than $y")
-    else if(x>y) println("$x is greater than $y")
-    else println("$x is equal to $y")
+//    val x =10
+//    val y = 7
+//    if(x<y) println("$x is lesser than $y")
+//    else if(x>y) println("$x is greater than $y")
+//    else println("$x is equal to $y")
 
 //    printSum(1,2)
 //    printSum2(2,3)
@@ -65,11 +64,67 @@ fun main(args: Array<String>){
 //    println(myRect.perimeter())
 //    println(myRect.area())
 
-    //part 21
-    val myTriangle = Triangle(3.0,4.0,5.0)
-    myTriangle.changeName("hello")
-    println(myTriangle.name)
+//    //part 21
+//    val myTriangle = Triangle(3.0,4.0,5.0)
+//    myTriangle.changeName("hello")
+//    println(myTriangle.name)
+//
+//    val myRectangle = Rectangle(4.0,3.0)
+//    println(myRectangle.area())
+//    println(myRectangle.perimeter())
+//
+//
+//    val myCircle = Circle(4.0)
+//    println(myCircle.area())
+//    println(myCircle.perimeter())
+//    val myRectangle1 = Rectangle(4.0)
+//    val myRectangle2 = Rectangle(1,2)
+//
+//    val circle = Circle.randomCircle()
 
+//    //part27
+//    val division = try {
+//        divide(4.0,0.0)
+//
+//    }catch (e:DivisionByZeroExceoption){
+//        0.0
+//    }
+//    println("The result of the division is $division")
+//    println("Please enter a number: ")
+//    val input = try{
+//        readLine()?.toInt()
+//    }catch (e: NumberFormatException){
+//        0
+//    }finally {
+//        println("This is from final")
+//    }
+//    println("you entered: $input")
+
+    val a = 3.0
+    val b = 4.0
+    val c = 5.0
+    val d = 4.0
+    val height = 3.87298
+    val trapeze = object : Shape("Trapeze",a,b,c,d,height){
+        override fun area(): Double {
+            return (a+c) * height/2.0
+
+        }
+
+        override fun perimeter(): Double {
+            return a+b+c+d
+        }
+    }
+
+}
+
+class DivisionByZeroExceoption : Exception("you cannot divide by zero")
+
+fun divide(a: Double, b:Double):Double{
+    if(b== 0.0){
+        throw DivisionByZeroExceoption()
+    }
+    return a/b
 }
 
 fun Int.isPrime():Boolean{
